@@ -11,7 +11,7 @@ from core import checks
 from core.models import PermissionLevel
 
 
-class GiveawayPlugin(commands.Cog):
+class giveaways(commands.Cog):
     """
     Host giveaways on your server with this ~~amazing~~ plugin
     """
@@ -176,7 +176,7 @@ class GiveawayPlugin(commands.Cog):
         invoke_without_command=True,
     )
     @commands.guild_only()
-    @checks.has_permissions(PermissionLevel.SUPPORTER)
+    @checks.has_permissions(PermissionLevel.ADMIN)
     async def giveaway(self, ctx: commands.Context):
         """
         Create / Stop Giveaways
@@ -184,7 +184,7 @@ class GiveawayPlugin(commands.Cog):
         await ctx.send_help(ctx.command)
         return
 
-    @checks.has_permissions(PermissionLevel.SUPPORTER)
+    @checks.has_permissions(PermissionLevel.ADMIN)
     @giveaway.command(name="start", aliases=["create", "c", "s"])
     async def start(self, ctx: commands.Context, channel: discord.TextChannel):
         """
@@ -201,7 +201,7 @@ class GiveawayPlugin(commands.Cog):
         def cancel_check(msg: discord.Message):
             return msg.content == "cancel" or msg.content == f"{ctx.prefix}cancel"
 
-        embed = discord.Embed(colour=0xFF00CC)
+        embed = discord.Embed(colour=0xCC00FF)
 
         await ctx.send(embed=self.generate_embed("What is the giveaway item?"))
         giveaway_item = await self.bot.wait_for("message", check=check)
@@ -289,7 +289,7 @@ class GiveawayPlugin(commands.Cog):
         await self._update_db()
         await self._start_new_giveaway_thread(giveaway_obj)
 
-    @checks.has_permissions(PermissionLevel.SUPPORTER)
+    @checks.has_permissions(PermissionLevel.ADMIN)
     @giveaway.command(name="reroll", aliases=["rroll"])
     async def reroll(self, ctx: commands.Context, _id: str, winners_count: int):
         """
@@ -380,7 +380,7 @@ class GiveawayPlugin(commands.Cog):
                 break
 
     @giveaway.command(name="cancel", aliases=["stop"])
-    @checks.has_permissions(PermissionLevel.SUPPORTER)
+    @checks.has_permissions(PermissionLevel.ADMIN)
     async def cancel(self, ctx: commands.Context, _id: str):
         """
         Stop an active giveaway
@@ -430,5 +430,4 @@ class GiveawayPlugin(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(GiveawayPlugin(bot))
-    
+    bot.add_cog(giveaways(bot))
