@@ -1,1 +1,9 @@
-
+root:
+    plugin_name:
+        ..
+        plugin_name.py
+        requirements.txt [optional]
+    plugin_name:
+        ..
+        plugin_name.py
+        requirements.txt [optional]
