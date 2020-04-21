@@ -88,7 +88,7 @@
         "icon_url": "https://images.ionadev.ml/b/ZIDUUsl.png",
         "thumbnail_url": "https://images.ionadev.ml/b/ZIDUUsl.png"
     },
-    "giveaway": {
+    "giveaways": {
         "repository": "Rhino149/Rhinos-modmail",
         "branch": "master",
         "description": "Host giveaways on your server",
