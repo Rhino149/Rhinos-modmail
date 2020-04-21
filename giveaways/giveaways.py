@@ -202,8 +202,6 @@ class giveaways(commands.Cog):
             return msg.content == "cancel" or msg.content == f"{ctx.prefix}cancel"
 
         embed = discord.Embed(colour=0xCC00FF)
-        
-        embed = discord.Embed(colour=0xFF00CC)
 
         await ctx.send(embed=self.generate_embed("What is the giveaway item?"))
         giveaway_item = await self.bot.wait_for("message", check=check)
