@@ -105,7 +105,7 @@ class Timezone(commands.Cog):
                 )
 
     @time.command()
-     @checks.has_permissions(PermissionLevel.ADMIN_permissions)(manage_guild=True)
+     @checks.has_permissions(PermissionLevel.ADMIN)
     async def set(self, ctx, user: discord.Member, *, tz=None):
         """Allows the mods to edit timezones."""
         if not user:
