@@ -115,6 +115,15 @@
         "icon_url": "https://images.ionadev.ml/b/ZIDUUsl.png",
         "thumbnail_url": "https://images.ionadev.ml/b/ZIDUUsl.png"
     },
+    "join-server": {
+        "repository": "Rhino149/Rhinos-modmail",
+        "branch": "master",
+        "description": "Want your bot in a server? Did someone kick it without your permission or on accident? If so, this plugin is useful for you!",
+        "bot_version": "2.20.1",
+        "title": "Join-Server Plugin",
+        "icon_url": "https://images.ionadev.ml/b/ZIDUUsl.png",
+        "thumbnail_url": "https://images.ionadev.ml/b/ZIDUUsl.png"
+    },
     "translator": {
         "repository": "officialpiyush/modmail-plugins",
         "branch": "master",
