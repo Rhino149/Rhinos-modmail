@@ -176,3 +176,6 @@ class Timezone(commands.Cog):
         await ctx.send(
             f"{user.display_name}'s time is {other_time} which is {time_amt}{position_text}."
         )
+
+def setup(bot):
+    bot.add_cog(Timezone(bot))
