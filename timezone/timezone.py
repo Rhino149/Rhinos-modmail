@@ -4,8 +4,8 @@ from datetime import datetime
 from pytz import common_timezones
 from pytz import country_timezones
 from typing import Optional
-from redbot.core import Config, commands, checks
-
+from core import checks
+from core.models import PermissionLevel
 
 class Timezone(commands.Cog):
     """Gets times across the world..."""
@@ -105,7 +105,7 @@ class Timezone(commands.Cog):
                 )
 
     @time.command()
-    @checks.admin_or_permissions(manage_guild=True)
+     @checks.has_permissions(PermissionLevel.ADMIN_permissions)(manage_guild=True)
     async def set(self, ctx, user: discord.Member, *, tz=None):
         """Allows the mods to edit timezones."""
         if not user:
